@@ -8,7 +8,7 @@ module.exports = {
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname);
       const name = path.basename(file.originalname, ext); // retorna o nome da imagem sem extensão
-      cb(null, `${name}-${Date.now()}${path.extname(ext)}`);
+      cb(null, `${name}-${Date.now()}${ext}`);
     }
   })
 };
