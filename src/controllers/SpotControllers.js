@@ -13,8 +13,7 @@ module.exports = {
     const { company, techs, price } = req.body;
     const { userid } = req.headers;
 
-    const user = await User.findById(userid);
-
+    const user = await User.find({ _id: userid });
     if (!user) {
       return res.status(400).json({ msg: "User not fauld" });
     }
